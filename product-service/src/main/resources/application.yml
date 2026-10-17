@@ -1,0 +1,21 @@
+server:
+  port: ${PRODUCT_SERVICE_PORT:8082}
+
+spring:
+  application:
+    name: product-service
+  datasource:
+    url: ${PRODUCT_DB_URL:jdbc:postgresql://localhost:5432/product_db}
+    username: ${PRODUCT_DB_USERNAME:product_user}
+    password: ${PRODUCT_DB_PASSWORD:product_password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    com.example.ecommerce.product: INFO
